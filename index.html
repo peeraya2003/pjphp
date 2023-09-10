@@ -276,7 +276,7 @@
           <h2>Learning Python</h2>
 
           <form action="login.html">
-            <button type="submit">L O G I N
+            <button type="button" id="login" name="login">L O G I N
               <div id="clip">
                 <div id="leftTop" class="corner"></div>
                 <div id="rightBottom" class="corner"></div>
@@ -289,7 +289,7 @@
           </form>
 
           <form action="register.html">
-            <button type="submit">R E G I S T E R
+            <button type="button" id="register" name="register">R E G I S T E R
               <div id="clip">
                 <div id="leftTop" class="corner"></div>
                 <div id="rightBottom" class="corner"></div>
@@ -325,5 +325,15 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+<script>
 
+document.getElementById("login").addEventListener("click", function() {
+  window.location.href='./login.html'
+  });
+
+  document.getElementById("register").addEventListener("click", function() {
+	  window.location.href='./register.html'
+  });
+
+</script>
 </html>
