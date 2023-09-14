@@ -49,11 +49,11 @@
 
       <form name="myForm" action="" method="post">
 
-        <table class="center">
+        <table class="center" style="text-align: center;">
 
           <tr>
 
-            <td style="width:300px;">
+            <td>
               <p style="font-family:Tektur;">Firstname</p>
               <input class="input" style="font-size:14px; font-family:Tektur;" type="text" name="fname" id="fname"
                 placeholder="Your Firstname">
@@ -174,14 +174,23 @@
   document.getElementById("register").addEventListener("click", function() {
     var email =  document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var password2 = document.getElementById("password2").value;
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var username = document.getElementById("username").value;
+
+    if(password.length != password2.length){
+      alert("The password don't match !");
+    }else{
+
     //For new registration
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password,fname,lname,username)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(user);
+      // console.log(user);
       alert("Registration successfully!!");
-      window.location.href='./home.html'
+      window.location.href='./login.html'
       // ...
     })
     .catch((error) => {
@@ -191,7 +200,7 @@
       console.log(errorMessage);
       alert(error);
     });		  		  
-  });
+  }});
   //----- End
 
 </script>
